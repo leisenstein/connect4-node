@@ -145,3 +145,5 @@ Game.prototype.printBoard = function() {
         console.log(this.currentBoard[i].toString());
     }
 }
+
+module.exports = Game;

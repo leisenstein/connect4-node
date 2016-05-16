@@ -19,14 +19,15 @@ socket.on('connect', function() {
 });
 
 
+var playButton = $('#btnPlay');
+var gameForm = $('#game-form');
 
-
-playButton.on('submit', function(event) {
-    
-    var playButton = $('btnPlay');
-    var player = $('player').text();
-    var column = $('column').text();
-
+gameForm.on('submit', function(event) {
+    event.preventDefault();
+    console.log('GameForm Submitted!');
+    var player = $('#txtPlayer').val();
+    var column = $('#txtColumn').val();
+    console.log('Player: ' + player + ' played Column: ' + column);
 
 
     socket.emit('playerMove', {
