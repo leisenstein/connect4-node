@@ -18,21 +18,30 @@ socket.on('connect', function() {
 
 });
 
+socket.on('boardUpdate', function(newBoard) {
+    for(var i = 0; i<newBoard.length;i++) {
+        console.log(newBoard[i].toString());
+    }
 
+});
 var playButton = $('#btnPlay');
 var gameForm = $('#game-form');
 
 gameForm.on('submit', function(event) {
     event.preventDefault();
-    console.log('GameForm Submitted!');
-    var player = $('#txtPlayer').val();
-    var column = $('#txtColumn').val();
+    // console.log('GameForm Submitted!');
+    var txtPlayer = $('#txtPlayer');
+    var txtColumn = $('#txtColumn');
 
+    var player = txtPlayer.val();
+    var column = txtColumn.val();
 
     socket.emit('playerMove', {
         player: player,
         column: column
     });
+    txtPlayer.val('');
+    txtColumn.val('');
 
 
 });

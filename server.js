@@ -44,6 +44,16 @@ io.on('connection', function(socket) {
         clientInfo[socket.id].game.move(p, c);
 
 
+        // server should broadcast message of board
+        io.to(clientInfo[socket.id].room).emit('boardUpdate', clientInfo[socket.id].game.currentBoard);
+
+
+
+
+        // clients will display board
+
+
+
     });
 
 
