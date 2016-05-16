@@ -27,11 +27,12 @@ gameForm.on('submit', function(event) {
     console.log('GameForm Submitted!');
     var player = $('#txtPlayer').val();
     var column = $('#txtColumn').val();
-    console.log('Player: ' + player + ' played Column: ' + column);
 
 
     socket.emit('playerMove', {
         player: player,
         column: column
     });
+
+
 });

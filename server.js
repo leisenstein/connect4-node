@@ -35,7 +35,7 @@ io.on('connection', function(socket) {
     });    
 
 
-    socket.on('move', function(move) {
+    socket.on('playerMove', function(move) {
         var p = move.player.toUpperCase();
         var c = move.column.toUpperCase();
 
