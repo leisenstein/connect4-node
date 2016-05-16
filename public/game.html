@@ -1,33 +1,55 @@
 <!doctype html>
 
 <html>
-    <head></head>
-    <title></title>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    
 
     <body>
 
-    <form id='game-form'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 well">
 
-        <label>Player: </label>
-        <input type="text" name="player" id="txtPlayer">
+                    <form id='game-form' class="form-inline">
+                        <div class="form-group">
+                            
+                            <label for="txtPlayer" class="">Player: </label>
+                            <input type="text" name="player" id="txtPlayer" class="form-control">
 
-        <br />
-        <label>Column: </label>
-        <input type="text" name="column" id="txtColumn">
-        <input type="submit" name="btnPlay" id="btnPlay" value="Play">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtColumn">Column: </label>
+                            <input type="text" name="column" id="txtColumn" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" name="btnPlay" id="btnPlay" value="Play">
+                        </div>
+
+                    </form>
+                        
+                    <div id="ui-board">
+                  
+                    </div>
 
 
-    </form>
-        
-    <div id="ui-board">
-  
-    </div>
+                </div>
+
+            </div>
+        </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script src="/js/QueryParams.js"></script>
-    <script src="/js/app.js"></script>
+
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script src="/js/QueryParams.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 
 
